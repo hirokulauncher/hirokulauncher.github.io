@@ -1,19 +1,23 @@
 ---
+import splashImg from '../assets/splashscreen.jpg';
+import accountsImg from '../assets/accountsscreen.jpg';
+import launcherImg from '../assets/launcherscreen.jpg';
+
 const screenshots = [
   {
-    src: '/splashscreen.jpg',
+    src: splashImg.src,
     alt: 'Splash Screen',
     label: 'Splash Screen',
     desc: 'Cinematic intro with particles & progress',
   },
   {
-    src: '/accountsscreen.jpg',
+    src: accountsImg.src,
     alt: 'Accounts Screen',
     label: 'Account Manager',
     desc: 'Microsoft, offline & server accounts',
   },
   {
-    src: '/launcherscreen.jpg',
+    src: launcherImg.src,
     alt: 'Launcher Screen',
     label: 'Home Screen',
     desc: 'Glass UI with video background',
@@ -32,11 +36,11 @@ const screenshots = [
     <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
       {screenshots.map((s, i) => (
         <div class="scroll-reveal glass rounded-2xl overflow-hidden relative group" style={`transition-delay:${i * 0.1}s`}>
-          <div class="aspect-[9/16] overflow-hidden bg-hiroku-dark flex items-center justify-center">
+          <div class="overflow-hidden">
             <img
               src={s.src}
               alt={s.alt}
-              class="w-full h-full object-contain group-hover:scale-105 transition-transform duration-500"
+              class="w-full h-auto max-h-64 object-cover group-hover:scale-105 transition-transform duration-500"
               loading="lazy"
             />
           </div>
